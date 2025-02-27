@@ -1,0 +1,22 @@
+pipeline {
+    agent any  // Specifies the agent (node) where the pipeline runs
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+                // Your build commands here, e.g. mvn clean install
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Test commands, like mvn test or a shell script
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying to production...'
+                // Deployment steps, like copying files, triggering another job, etc.
+            }
+        }
+    }
